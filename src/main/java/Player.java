@@ -14,7 +14,7 @@ class Player {
     /** 
      * Constructor that specifies a name, age and hand
      * Throws exceptions if name are empty or if age is unrealistic
-     *  Also throws exceptions if hand or cards in hand are null
+     * Also throws exceptions if hand or cards in hand are null
      * 
      * @param name String that is the name of the player
      * @param age integer that is the age of the player
@@ -151,7 +151,7 @@ class Player {
         }
         return isPresent;
     }
-    
+
     @Override
     public String toString() {
         String result = "";

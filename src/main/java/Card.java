@@ -45,6 +45,7 @@ class Card {
      * 
 	 * @return the suit of the card
 	 */
+    
     public String getSuit(){
         return this.suit;
     }
@@ -54,6 +55,7 @@ class Card {
      * 
 	 * @return the value of the card
 	 */
+
     public int getValue(){
         return this.value;
     }
