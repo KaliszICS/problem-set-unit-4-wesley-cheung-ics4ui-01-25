@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class HighCard {
     public static void main(String[] args) {
         Deck deck = new Deck();
-        if (deck.size()<10) {
+        if (deck.size() < 10) {
             System.out.println("Insufficient cards in deck to play.");
             return;
         }
@@ -21,12 +21,12 @@ public class HighCard {
             player1.draw(deck);
             player2.draw(deck);
         }
-        for (int i = 0;i<5;i++) {
+        for (int i = 0; i < 5; i++) {
             int maxIndex1 = 0;
             int maxIndex2 = 0;
             Card[] hand1 = player1.getHand();
             Card[] hand2 = player2.getHand();
-            for (int j = 0;j<player1.size();j++) {
+            for (int j = 0; j < player1.size(); j++) {
                 if (hand1[j].getValue() > hand1[maxIndex1].getValue()){
                     maxIndex1 = j;
                 }
@@ -38,7 +38,7 @@ public class HighCard {
             }
             System.out.println(name1 + " drew a: "+hand1[maxIndex1]);
             System.out.println(name2 + " drew a: " +hand2[maxIndex2]);
-            if (hand1[maxIndex1].getValue()>hand2[maxIndex2].getValue()) {
+            if (hand1[maxIndex1].getValue() > hand2[maxIndex2].getValue()) {
                 System.out.println(name1 + " wins this round.");
                 points += 1;
             }   else {
@@ -49,9 +49,9 @@ public class HighCard {
             player2.discardCard(hand2[maxIndex2], new DiscardPile());
         }
         if (points > 0) {
-                System.out.println(name1+" WINS!");
+                System.out.println(name1 + " WINS!");
             } else {
-                System.out.println(name2+" WINS!");
+                System.out.println(name2 + " WINS!");
             }
     }
 }

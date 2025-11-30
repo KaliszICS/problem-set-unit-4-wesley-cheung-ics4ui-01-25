@@ -17,7 +17,7 @@ class Deck {
         this.deck = new ArrayList<Card>();
         for (int i = 0; i < deck.length; i++) {
             if (deck[i] == null) {
-                throw new NullPointerException("Cards in the deck cannot be null");
+                throw new IllegalArgumentException("Cards in the deck cannot be null");
             }
             this.deck.add(deck[i]);
         }
@@ -54,12 +54,9 @@ class Deck {
         return card;
 	}
     public void shuffle() {
-        if (this.size() == 0) {
-            throw new IllegalArgumentException("Cannot shuffle empty deck");
-        }
         int storedIndex;
         int otherIndex;
-        for (int i = 0;i<(this.size());i++) {
+        for (int i = 0; i < (this.size()); i++) {
             storedIndex = (int)(Math.random()*(this.size()));
             otherIndex = (int)(Math.random()*(this.size()));
             Card storedCard = this.deck.get(storedIndex);
@@ -74,10 +71,7 @@ class Deck {
         this.deck.add(0, card);
     }
     public void reshuffle(Card[] cards) {
-        if (cards.length == 0) {
-            throw new IllegalArgumentException("Cannot reshuffle with no new cards");
-        }
-        for (int i = 0;i<cards.length;i++) {
+        for (int i = 0; i < cards.length; i++) {
             this.addCard(cards[i]);
         }
 

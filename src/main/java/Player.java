@@ -85,14 +85,11 @@ class Player {
     public void draw(Deck deck) {
         Card card = deck.draw();
         if (card == null) {
-            throw new NullPointerException("Cannot draw a null card/from an empty deck");
+            throw new NullPointerException("Cannot draw from an empty deck");
         }
         this.hand.add(card);
     }
     public void discardCard(Card card, DiscardPile discardPile) {
-        if (this.hand.size() == 0) {
-            throw new IllegalArgumentException("Cannot discard from an empty hand");
-        }
         if (card == null) {
             throw new NullPointerException("Cannot discard a null card");
         }
@@ -111,7 +108,7 @@ class Player {
     public String toString() {
         String result = "";
         result += (this.name + ", " + this.age);
-        for (int i = 0;i<this.size();i++) {
+        for (int i = 0; i < this.size(); i++) {
             result += (", " + this.getHand()[i].toString());
         }
         result += ".";
