@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class HighCard {
     public static void main(String[] args) {
         Deck deck = new Deck();
+        DiscardPile discard = new DiscardPile();
         if (deck.size() < 10) {
             System.out.println("Insufficient cards in deck to play.");
             return;
@@ -14,6 +15,10 @@ public class HighCard {
         String name1 = input.nextLine();
         System.out.println("Player 2: ");
         String name2 = input.nextLine();
+        if (name1.equals(name2)) {
+            name1 = "Player 1";
+            name2 = "Player 2";
+        }
         Player player1 = new Player(name1, 20);
         Player player2 = new Player(name2, 20);
         input.close();
@@ -45,13 +50,15 @@ public class HighCard {
                 System.out.println(name2 + " wins this round.");
                 points -= 1;
             }
-            player1.discardCard(hand1[maxIndex1], new DiscardPile());
-            player2.discardCard(hand2[maxIndex2], new DiscardPile());
+            player1.discardCard(hand1[maxIndex1], discard);
+            player2.discardCard(hand2[maxIndex2], discard);
         }
-        if (points > 0) {
+        if (name1 == name2) {
+            if (points > 0) {
                 System.out.println(name1 + " WINS!");
             } else {
                 System.out.println(name2 + " WINS!");
-            }
+            }   
+        }
     }
 }

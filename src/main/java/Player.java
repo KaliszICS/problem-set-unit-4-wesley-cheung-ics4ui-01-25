@@ -107,9 +107,10 @@ class Player {
     @Override
     public String toString() {
         String result = "";
+        Card[] hand = this.getHand();
         result += (this.name + ", " + this.age);
         for (int i = 0; i < this.size(); i++) {
-            result += (", " + this.getHand()[i].toString());
+            result += (", " + hand[i].toString());
         }
         result += ".";
         return result; 
