@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
-/**
-	* Definition of the Player class
+   /**
+	* A class that defines a player in a card game
+    * Uses the Card, DiscardPile, and Deck classes
 	* @author Wesley Cheung
 	* @version 17.0.1
 	*/
@@ -10,15 +11,16 @@ class Player {
     private int age;
     private ArrayList<Card> hand;
 
-	/**
-	 * This class can be configured with 3 variables, name, age, and hand
-	 * @param name String that is the name of the player
-	 * @param age integer that is the age of the player
-     * @param hand Card[] that is the hand of the player
-	 */
     /** 
-    * Class constructor specifying name, age, and hand
-    */
+     * Constructor that specifies a name, age and hand
+     * Throws exceptions if name are empty or if age is unrealistic
+     *  Also throws exceptions if hand or cards in hand are null
+     * 
+     * @param name String that is the name of the player
+     * @param age integer that is the age of the player
+     * @param hand Card array that the hand of the player
+	 */
+
     public Player(String name, int age, Card[] hand) {
         if (name == null || name == "") {
             throw new IllegalArgumentException("Name cannot be empty");
@@ -39,9 +41,15 @@ class Player {
             this.hand.add(hand[i]);
         }
     }
+    
     /** 
-    * Class constructor specifying name and age, creates a default empty hand
-    */
+     * Constructor that specifies a name and age
+     * Throws exceptions if name is empty or if age is unrealistic
+     * 
+     * @param name String that is the name of the player
+     * @param age integer that is the age of the player
+	 */
+
     public Player(String name, int age) {
         if (name == null || name == "") {
             throw new IllegalArgumentException("Name cannot be empty");
@@ -56,8 +64,9 @@ class Player {
     }
 
     /**
-	 * @return the value of name
-	 *
+     * Getter for the name of the player
+     * 
+	 * @return the player's name
 	 */
 
     public String getName(){
@@ -65,23 +74,42 @@ class Player {
     }
 
     /**
-	 * @return the value of age
-	 *
+     * Getter for the player's age
+     * 
+	 * @return the player's age
 	 */
+
     public int getAge(){
         return this.age;
     }
 
-     /**
-	 * @return the value of hand (array)
-	 *
+    /**
+     * Getter for the player's hand
+     * 
+	 * @return a Card array which is the player's hand
 	 */
+
     public Card[] getHand(){
         return this.hand.toArray(new Card[this.size()]);
     }
+
+    
+    /**
+     * Getter for the size of the player's hand
+     * 
+	 * @return the size of the player's hand
+	 */
+
     public int size() {
         return this.hand.size();
     }
+
+    /**
+     * Method that draws a card from the deck, adding it into the hand
+     * 
+	 * @param deck Deck which is to be drawn from
+	 */
+
     public void draw(Deck deck) {
         Card card = deck.draw();
         if (card == null) {
@@ -89,21 +117,41 @@ class Player {
         }
         this.hand.add(card);
     }
+
+    /**
+     * Method that discards a card from the hand, adding it to the discardPile
+     * Throws exception if card is null or card is not in hand
+     * 
+     * @param card Card that is to be removed from the hand
+	 * @param discardPile DiscardPile which card is to be discarded into
+	 */
+
     public void discardCard(Card card, DiscardPile discardPile) {
         if (card == null) {
-            throw new NullPointerException("Cannot discard a null card");
+            throw new IllegalArgumentException("Cannot discard a null card");
         }
-        discardPile.addCard(card);
         if (!(this.hand.remove(card))) {
             throw new IllegalArgumentException("Card to discard does not exist in hand");
         }
+        discardPile.addCard(card);
     }
+
+    /**
+     * Method that returns a card from the hand to the deck
+     * 
+     * @param card Card that is to be removed from the hand
+	 * @param deck Deck which the card is to be added to
+     * @return a boolean, true when the card has been returned, and false if not
+	 */
+
     public boolean returnCard(Card card, Deck deck) {
-        if (this.hand.indexOf(card) != -1) {
+        boolean isPresent = this.hand.remove(card);
+        if (isPresent) {
             deck.addCard(card);
         }
-        return this.hand.remove(card);
+        return isPresent;
     }
+    
     @Override
     public String toString() {
         String result = "";

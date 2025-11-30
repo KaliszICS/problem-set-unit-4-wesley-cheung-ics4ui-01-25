@@ -3,10 +3,6 @@ public class HighCard {
     public static void main(String[] args) {
         Deck deck = new Deck();
         DiscardPile discard = new DiscardPile();
-        if (deck.size() < 10) {
-            System.out.println("Insufficient cards in deck to play.");
-            return;
-        }
         int points = 0;
         deck.shuffle();
         Scanner input = new Scanner(System.in);
@@ -15,13 +11,13 @@ public class HighCard {
         String name1 = input.nextLine();
         System.out.println("Player 2: ");
         String name2 = input.nextLine();
+        input.close();
         if (name1.equals(name2)) {
             name1 = "Player 1";
             name2 = "Player 2";
         }
         Player player1 = new Player(name1, 20);
         Player player2 = new Player(name2, 20);
-        input.close();
         for (int i = 0;i<5;i++) {
             player1.draw(deck);
             player2.draw(deck);
