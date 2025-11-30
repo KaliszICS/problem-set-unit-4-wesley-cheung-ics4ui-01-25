@@ -59,8 +59,9 @@ class DiscardPile {
         }
     }
     public Card[] removeAll() {
-        Card[] removedCards = new Card[this.size()];
-        for(int i = 0;i<this.size();i++) {
+        int size = this.size();
+        Card[] removedCards = new Card[size];
+        for(int i = 0;i<size;i++) {
             removedCards[i] = discard.get(0);
             this.discard.remove(0);
             

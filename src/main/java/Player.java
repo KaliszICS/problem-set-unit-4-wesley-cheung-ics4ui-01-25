@@ -20,11 +20,21 @@ class Player {
     * Class constructor specifying name, age, and hand
     */
     public Player(String name, int age, Card[] hand) {
+        if (name == null || name == "") {
+            throw new IllegalArgumentException("Name cannot be empty");
+        } else if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        } else if (age > 150) {
+            throw new IllegalArgumentException("Age must be realistic");
+        } else if (hand == null) {
+            throw new IllegalArgumentException("Hand cannot be null");
+        }
         this.name = name;
         this.age = age;
+        this.hand = new ArrayList<Card>();
         for (int i = 0; i < hand.length; i++) {
             if (hand[i] == null) {
-                throw new NullPointerException("Cards in the hand cannot be null");
+                throw new IllegalArgumentException("Cards in the hand cannot be null");
             }
             this.hand.add(hand[i]);
         }
@@ -33,6 +43,13 @@ class Player {
     * Class constructor specifying name and age, creates a default empty hand
     */
     public Player(String name, int age) {
+        if (name == null || name == "") {
+            throw new IllegalArgumentException("Name cannot be empty");
+        } else if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        } else if (age > 150) {
+            throw new IllegalArgumentException("Age must be realistic");
+        }
         this.name = name;
         this.age = age;
         this.hand = new ArrayList<Card>();
@@ -81,7 +98,7 @@ class Player {
         }
         discardPile.addCard(card);
         if (!(this.hand.remove(card))) {
-            throw new IllegalArgumentException("Card to discard does not exist in had");
+            throw new IllegalArgumentException("Card to discard does not exist in hand");
         }
     }
     public boolean returnCard(Card card, Deck deck) {

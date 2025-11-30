@@ -18,6 +18,13 @@ class Card {
     * Class constructor specifying name, suit, value
     */
     public Card(String name, String suit, int value) {
+        if (name == null || name == "") {
+            throw new IllegalArgumentException("Card name cannot be empty");
+        } else if (suit == null || suit == "") {
+            throw new IllegalArgumentException("Card suit cannot be empty");
+        } else if (value < 0) {
+            throw new IllegalArgumentException("Value cannot be negative");
+        }
         this.name = name;
         this.suit = suit;
         this.value = value;
