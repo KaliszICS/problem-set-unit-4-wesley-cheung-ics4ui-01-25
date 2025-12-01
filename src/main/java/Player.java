@@ -15,7 +15,7 @@ public class Player {
      * @param name the name of this player
      * @param age the age of this player
      * @param hand the hand of this player
-     * @throws IllegalArgumentException When name is empty, age is negative/unrealistic, or hand or cards in hand are null
+     * @throws IllegalArgumentException When name is empty, age is negative, hand or cards in hand are null
 	 */
 
     public Player(String name, int age, Card[] hand) {
@@ -23,8 +23,6 @@ public class Player {
             throw new IllegalArgumentException("Name cannot be empty");
         } else if (age < 0) {
             throw new IllegalArgumentException("Age cannot be negative");
-        } else if (age > 150) {
-            throw new IllegalArgumentException("Age must be realistic");
         } else if (hand == null) {
             throw new IllegalArgumentException("Hand cannot be null");
         }

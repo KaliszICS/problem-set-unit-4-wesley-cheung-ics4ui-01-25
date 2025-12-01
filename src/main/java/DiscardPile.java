@@ -74,9 +74,6 @@ public class DiscardPile {
 	 */
 
     public Card removeCard(Card card) {
-        if (this.discard.size() == 0) {
-            return null;
-        }
         if (this.discard.remove(card)) {
             return card;
         } else {
@@ -93,10 +90,9 @@ public class DiscardPile {
         int size = this.size();
         Card[] removedCards = new Card[size];
         for(int i = 0;i<size;i++) {
-            removedCards[i] = discard.get(0);
-            this.discard.remove(0);
-            
+            removedCards[i] = this.discard.get(i);
         }
+        this.discard.clear();
         return removedCards;
     }
 

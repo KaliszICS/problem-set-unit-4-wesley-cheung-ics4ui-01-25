@@ -65,9 +65,10 @@ public class Card {
     }
 
     /**
-     * Takes a card and compares it by name, suit and value, if all are the same then the cards are equal.
+     * Takes an object and checks if it is a card.
+     * Compares the name, suit and value, if all are the same then the cards are equal.
      * @param obj Card that is to be compared to this card
-     * @return true if card is equal to this card, false if object is null, not of the same class, or not equal to this card
+     * @return true if <code>card</code> is equal to this card, otherwise false
 	 */
     @Override
     public boolean equals(Object obj) {

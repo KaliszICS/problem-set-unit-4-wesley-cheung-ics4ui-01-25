@@ -55,7 +55,7 @@ public class Deck {
 
     /**
      * Draws a card from the top of this deck.
-	 * @return The card that was drawn, null if no card is drawn
+	 * @return The card that was drawn, null if deck is empty
 	 */
 
 	public Card draw() {
@@ -68,8 +68,7 @@ public class Deck {
 	}
 
      /**
-     * Shuffles this deck by swapping two random cards, and the amount <br>
-     * of times this occurs corresponds the the size of the array.
+     * Shuffles this deck.
 	 */
 
     public void shuffle() {
@@ -97,7 +96,8 @@ public class Deck {
     }
 
     /**
-     * Adds an array of cards to the deck, and then shuffles the deck.
+     * Adds an array of cards to this deck, and then shuffles this deck.
+     * This ignores any null cards.
      * @param cards Cards to be added to this deck before shuffling
 	 */
 
