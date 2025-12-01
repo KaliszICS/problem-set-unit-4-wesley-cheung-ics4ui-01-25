@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 
 /**
-	* A class that defines a discard pile of cards
-    * Cards are from the Card class
-	* @author Wesley Cheung
-	* @version 17.0.1
-	*/
+ * A class that defines a discard pile of cards
+ * Cards are from the Card class
+ * @author Wesley Cheung
+ * @version 17.0.1
+ */
 
 class DiscardPile {
     private ArrayList<Card> discard;
 
-	/** 
-    * Constructor that creates an ArrayList discard pile from a specified Card array
-    * 
-    * @param discard a Card array to be taken in as the discard pile
-    * @throws IllegalArgumentException if Card array or cards in the Card array are null
-	*/
+    /** 
+     * Constructor that creates an ArrayList discard pile from a specified Card array
+     * 
+     * @param discard a Card array to be taken in as the discard pile
+     * @throws IllegalArgumentException if Card array or cards in the Card array are null
+	 */
 
 	public DiscardPile(Card[] discard) {
         this.discard = new ArrayList<Card>();
@@ -31,8 +31,8 @@ class DiscardPile {
 	}
 
     /** 
-    * Default class constructor that creates an empty discard pile
-    */
+     * Default class constructor that creates an empty discard pile
+     */
 
     public DiscardPile() {
         this.discard = new ArrayList<Card>();

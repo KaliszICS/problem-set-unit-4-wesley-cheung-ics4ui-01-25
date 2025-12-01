@@ -1,21 +1,20 @@
 import java.util.ArrayList;
 
 /**
-	* A class that defines a deck of cards
-    * Cards are from the Card class
-	* @author Wesley Cheung
-	* @version 17.0.1
-	*/
+ * A class that defines a deck of cards
+ * Cards are from the Card class
+ * @author Wesley Cheung
+ * @version 17.0.1
+ */
 
 class Deck {
     private ArrayList<Card> deck;
 
 	/** 
-    * Constructor that creates an ArrayList deck from a specified Card array
-    *
-    * @param deck a Card array to be taken in as the deck
-    * @throws IllegalArgumentException if Card array or cards in the Card array are null
-	*/
+     * Constructor that creates an ArrayList deck from a specified Card array
+     * @param deck a Card array to be taken in as the deck
+     * @throws IllegalArgumentException if Card array or cards in the Card array are null
+	 */
 
 	public Deck(Card[] deck) {
         this.deck = new ArrayList<Card>();
@@ -31,9 +30,9 @@ class Deck {
 	}
 
     /** 
-    * Default constructor that creates a 52-card deck with the suits from Hearts to Spades and has the names from Ace to King
-    * The values higher from Ace to King, and for the same card names, the values are higher from Hearts to Spades
-	*/
+     * Default constructor that creates a 52-card deck with the suits from Hearts to Spades and has the names from Ace to King
+     * The values higher from Ace to King, and for the same card names, the values are higher from Hearts to Spades
+	 */
 
     public Deck() {
         this.deck = new ArrayList<Card>();
@@ -48,7 +47,6 @@ class Deck {
 
 	/**
      * Getter for the size of the deck
-     * 
 	 * @return the size of the deck
 	 */
 
@@ -57,8 +55,7 @@ class Deck {
 	}
 
     /**
-     * Method that draws a card from the top of the deck, which is index 0
-     * 
+     * Method that draws a card from the top of the deck
 	 * @return the card that was drawn, null if no card is drawn
 	 */
 
@@ -91,7 +88,6 @@ class Deck {
     /**
      * Method that adds a card to the top of the deck
      * Does nothing if the card is null
-     * 
      * @param card the card to be added to the deck
 	 */
 
@@ -105,7 +101,6 @@ class Deck {
     /**
      * Method that adds an array of cards to the deck, and then shuffles the deck
      * Uses the shuffle and addCard methods
-     * 
      * @param cards Card array to added to the deck before shuffling
 	 */
 

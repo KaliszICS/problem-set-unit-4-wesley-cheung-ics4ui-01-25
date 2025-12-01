@@ -1,8 +1,8 @@
 /**
-	* A class that defines a playing card
-	* @author Wesley Cheung
-	* @version 17.0.1
-	*/
+ * A class that defines a playing card
+ * @author Wesley Cheung
+ * @version 17.0.1
+ */
 
 class Card {
     private String name;
@@ -10,12 +10,12 @@ class Card {
     private int value;
 
     /** 
-    * Constructor that specifies a name, suit, and value
-    * Throws exceptions if names or suits are empty, and if values are negative
-    * @param name String that is the name of the card
-	* @param suit String that is the suit of the card
-    * @param value integer that is the value of the card
-	*/
+     * Constructor that specifies a name, suit, and value
+     * Throws exceptions if names or suits are empty, and if values are negative
+     * @param name String that is the name of the card
+	 * @param suit String that is the suit of the card
+     * @param value integer that is the value of the card
+	 */
 
     public Card(String name, String suit, int value) {
         if (name == null || name == "") {
@@ -32,7 +32,6 @@ class Card {
 
     /**
      * Getter for the name of the card
-     * 
 	 * @return the name of the card
 	 */
 
@@ -42,7 +41,6 @@ class Card {
 
     /**
      * Getter for the suit of the card
-     * 
 	 * @return the suit of the card
 	 */
     
@@ -50,9 +48,8 @@ class Card {
         return this.suit;
     }
 
-     /**
+    /**
      * Getter for the value of the card
-     * 
 	 * @return the value of the card
 	 */
 
