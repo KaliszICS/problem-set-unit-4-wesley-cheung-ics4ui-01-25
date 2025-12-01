@@ -1,7 +1,7 @@
 /**
  * Defines a playing card.
  * @author Wesley Cheung
- * @version 1.0.0
+ * @version 17.0.1
  */
 
 public class Card {

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Defines a deck of cards.
  * @author Wesley Cheung
- * @version 1.0.0
+ * @version 17.0.1
  */
 
 public class Deck {
@@ -74,9 +74,10 @@ public class Deck {
     public void shuffle() {
         int storedIndex;
         int otherIndex;
-        for (int i = 0; i < (this.size()); i++) {
-            storedIndex = (int)(Math.random()*(this.size()));
-            otherIndex = (int)(Math.random()*(this.size()));
+        int size = this.size();
+        for (int i = 0; i < size; i++) {
+            storedIndex = (int)(Math.random()*(size));
+            otherIndex = (int)(Math.random()*(size));
             Card storedCard = this.deck.get(storedIndex);
             this.deck.set(storedIndex, this.deck.get(otherIndex));
             this.deck.set(otherIndex, storedCard);  

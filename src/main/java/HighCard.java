@@ -49,12 +49,10 @@ public class HighCard {
             player1.discardCard(hand1[maxIndex1], discard);
             player2.discardCard(hand2[maxIndex2], discard);
         }
-        if (name1 == name2) {
-            if (points > 0) {
-                System.out.println(name1 + " WINS!");
-            } else {
-                System.out.println(name2 + " WINS!");
+        if (points > 0) {
+            System.out.println(name1 + " WINS!");
+        } else {
+            System.out.println(name2 + " WINS!");
             }   
         }
-    }
 }

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Defines a player in a card game.
  * @author Wesley Cheung
- * @version 1.0.0
+ * @version 17.0.1
  */
 public class Player {
     private String name;
@@ -41,7 +41,7 @@ public class Player {
      * Constructs a player with the specified name and age.
      * @param name the name of this player
      * @param age the age of this player
-     * @throws IllegalArgumentException When name is empty or if age is unrealistic
+     * @throws IllegalArgumentException When name is empty or if age is negative
 	 */
 
     public Player(String name, int age) {
@@ -49,8 +49,6 @@ public class Player {
             throw new IllegalArgumentException("Name cannot be empty");
         } else if (age < 0) {
             throw new IllegalArgumentException("Age cannot be negative");
-        } else if (age > 150) {
-            throw new IllegalArgumentException("Age must be realistic");
         }
         this.name = name;
         this.age = age;
@@ -119,7 +117,7 @@ public class Player {
         if (card == null) {
             throw new IllegalArgumentException("Cannot discard a null card");
         }
-        if (!(this.hand.remove(card))) {
+        if (!this.hand.remove(card)) {
             throw new IllegalArgumentException("Card to discard does not exist in hand");
         }
         discardPile.addCard(card);

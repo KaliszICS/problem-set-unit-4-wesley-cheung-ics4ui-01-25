@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Defines a discard pile of cards.
  * @author Wesley Cheung
- * @version 1.0.0
+ * @version 17.0.1
  */
 
 public class DiscardPile {
@@ -89,7 +89,7 @@ public class DiscardPile {
     public Card[] removeAll() {
         int size = this.size();
         Card[] removedCards = new Card[size];
-        for(int i = 0;i<size;i++) {
+        for(int i = 0; i < size; i++) {
             removedCards[i] = this.discard.get(i);
         }
         this.discard.clear();
@@ -104,7 +104,7 @@ public class DiscardPile {
     @Override
     public String toString() {
         String result = "";
-        for (int i = 0;i<size();i++) {
+        for (int i = 0; i<size(); i++) {
             result += this.discard.get(i).toString();
             if (i==size()-1) {
                 result += ".";
