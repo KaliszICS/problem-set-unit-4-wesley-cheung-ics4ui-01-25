@@ -62,17 +62,17 @@ class Card {
 
     @Override
     public String toString() {
-    return this.name + " of " + this.suit;
+        return this.name + " of " + this.suit;
     }
 
     @Override
     public boolean equals(Object obj) {
-    if (obj == null) {
-        return false;
-    } else if (this.getClass() != obj.getClass()) {
-        return false;
-    }
-    Card other = (Card)obj;
-    return this.name.equals(other.getName()) && this.suit.equals(other.getSuit()) && this.value == other.getValue();
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Card other = (Card)obj;
+        return this.name.equals(other.getName()) && this.suit.equals(other.getSuit()) && this.value == other.getValue();
     }
 }

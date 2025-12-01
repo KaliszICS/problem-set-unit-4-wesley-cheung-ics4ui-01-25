@@ -12,8 +12,9 @@ class Deck {
 
 	/** 
     * Constructor that creates an ArrayList deck from a specified Card array
-    * Throws exceptions if Card array or cards in the Card array are null
+    *
     * @param deck a Card array to be taken in as the deck
+    * @throws IllegalArgumentException if Card array or cards in the Card array are null
 	*/
 
 	public Deck(Card[] deck) {
@@ -88,7 +89,7 @@ class Deck {
     }
 
     /**
-     * Method that adds a card to the top of the deck, which is index 0
+     * Method that adds a card to the top of the deck
      * Does nothing if the card is null
      * 
      * @param card the card to be added to the deck

@@ -19,6 +19,7 @@ class Player {
      * @param name String that is the name of the player
      * @param age integer that is the age of the player
      * @param hand Card array that the hand of the player
+     * @throws IllegalArgumentException when name is empty or if age is unrealistic
 	 */
 
     public Player(String name, int age, Card[] hand) {
@@ -44,10 +45,10 @@ class Player {
     
     /** 
      * Constructor that specifies a name and age
-     * Throws exceptions if name is empty or if age is unrealistic
      * 
      * @param name String that is the name of the player
      * @param age integer that is the age of the player
+     * @throws IllegalArgumentException when name is empty or if age is unrealistic
 	 */
 
     public Player(String name, int age) {
@@ -108,6 +109,7 @@ class Player {
      * Method that draws a card from the deck, adding it into the hand
      * 
 	 * @param deck Deck which is to be drawn from
+     * @throws NullPointerExceptionn if deck is empty
 	 */
 
     public void draw(Deck deck) {
@@ -120,10 +122,10 @@ class Player {
 
     /**
      * Method that discards a card from the hand, adding it to the discardPile
-     * Throws exception if card is null or card is not in hand
      * 
      * @param card Card that is to be removed from the hand
 	 * @param discardPile DiscardPile which card is to be discarded into
+     * @throws IllegalArgumentException if card is null or card is not in hand
 	 */
 
     public void discardCard(Card card, DiscardPile discardPile) {
@@ -141,7 +143,7 @@ class Player {
      * 
      * @param card Card that is to be removed from the hand
 	 * @param deck Deck which the card is to be added to
-     * @return a boolean, true when the card has been returned, and false if not
+     * @return a boolean, true if the card has been returned, and false if not due to card not being in hand
 	 */
 
     public boolean returnCard(Card card, Deck deck) {

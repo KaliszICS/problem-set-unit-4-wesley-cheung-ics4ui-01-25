@@ -12,8 +12,9 @@ class DiscardPile {
 
 	/** 
     * Constructor that creates an ArrayList discard pile from a specified Card array
-    * Throws exceptions if Card array or cards in the Card array are null
+    * 
     * @param discard a Card array to be taken in as the discard pile
+    * @throws IllegalArgumentException if Card array or cards in the Card array are null
 	*/
 
 	public DiscardPile(Card[] discard) {
@@ -28,9 +29,11 @@ class DiscardPile {
             this.discard.add(discard[i]);
         }
 	}
+
     /** 
     * Default class constructor that creates an empty discard pile
     */
+
     public DiscardPile() {
         this.discard = new ArrayList<Card>();
     }
@@ -56,7 +59,7 @@ class DiscardPile {
 	}
 
     /**
-     * Method that adds a card to the top of the discard pile, which is index 0
+     * Method that adds a card to the top of the discard pile
      * Does nothing if the card attempting to be added is null
      * 
      * @param card the Card to be added to the discard pile
