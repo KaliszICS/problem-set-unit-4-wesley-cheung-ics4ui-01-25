@@ -1,25 +1,21 @@
 import java.util.ArrayList;
 
-   /**
-	* A class that defines a player in a card game
-    * Uses the Card, DiscardPile, and Deck classes
-	* @author Wesley Cheung
-	* @version 17.0.1
-	*/
-class Player {
+/**
+ * Defines a player in a card game.
+ * @author Wesley Cheung
+ * @version 1.0.0
+ */
+public class Player {
     private String name;
     private int age;
     private ArrayList<Card> hand;
 
     /** 
-     * Constructor that specifies a name, age and hand
-     * Throws exceptions if name are empty or if age is unrealistic
-     * Also throws exceptions if hand or cards in hand are null
-     * 
-     * @param name String that is the name of the player
-     * @param age integer that is the age of the player
-     * @param hand Card array that the hand of the player
-     * @throws IllegalArgumentException when name is empty or if age is unrealistic
+     * Constructs a player with a specified name, age and hand.
+     * @param name the name of this player
+     * @param age the age of this player
+     * @param hand the hand of this player
+     * @throws IllegalArgumentException When name is empty, age is negative/unrealistic, or hand or cards in hand are null
 	 */
 
     public Player(String name, int age, Card[] hand) {
@@ -44,11 +40,10 @@ class Player {
     }
     
     /** 
-     * Constructor that specifies a name and age
-     * 
-     * @param name String that is the name of the player
-     * @param age integer that is the age of the player
-     * @throws IllegalArgumentException when name is empty or if age is unrealistic
+     * Constructs a player with the specified name and age.
+     * @param name the name of this player
+     * @param age the age of this player
+     * @throws IllegalArgumentException When name is empty or if age is unrealistic
 	 */
 
     public Player(String name, int age) {
@@ -65,9 +60,8 @@ class Player {
     }
 
     /**
-     * Getter for the name of the player
-     * 
-	 * @return the player's name
+     * Getter for the name of this player.
+	 * @return This player's name
 	 */
 
     public String getName(){
@@ -75,9 +69,8 @@ class Player {
     }
 
     /**
-     * Getter for the player's age
-     * 
-	 * @return the player's age
+     * Getter for this player's age.
+	 * @return This player's age
 	 */
 
     public int getAge(){
@@ -85,9 +78,8 @@ class Player {
     }
 
     /**
-     * Getter for the player's hand
-     * 
-	 * @return a Card array which is the player's hand
+     * Getter for this player's hand.
+	 * @return A Card array which is this player's hand
 	 */
 
     public Card[] getHand(){
@@ -96,9 +88,8 @@ class Player {
 
     
     /**
-     * Getter for the size of the player's hand
-     * 
-	 * @return the size of the player's hand
+     * Getter for the size of this player's hand.
+	 * @return The size of this player's hand
 	 */
 
     public int size() {
@@ -106,10 +97,9 @@ class Player {
     }
 
     /**
-     * Method that draws a card from the deck, adding it into the hand
-     * 
+     * Draws a card from this deck, adding it into the hand.
 	 * @param deck Deck which is to be drawn from
-     * @throws NullPointerExceptionn if deck is empty
+     * @throws NullPointerException if deck is empty
 	 */
 
     public void draw(Deck deck) {
@@ -121,11 +111,10 @@ class Player {
     }
 
     /**
-     * Method that discards a card from the hand, adding it to the discardPile
-     * 
-     * @param card Card that is to be removed from the hand
+     * Discards a card from this player's hand, adding it to the discardPile.
+     * @param card Card that is to be removed from this player's hand
 	 * @param discardPile DiscardPile which card is to be discarded into
-     * @throws IllegalArgumentException if card is null or card is not in hand
+     * @throws IllegalArgumentException If card is null or card is not in hand
 	 */
 
     public void discardCard(Card card, DiscardPile discardPile) {
@@ -139,11 +128,10 @@ class Player {
     }
 
     /**
-     * Method that returns a card from the hand to the deck
-     * 
-     * @param card Card that is to be removed from the hand
+     * Returns a card from the hand to the deck.
+     * @param card Card that is to be removed from this hand
 	 * @param deck Deck which the card is to be added to
-     * @return a boolean, true if the card has been returned, and false if not due to card not being in hand
+     * @return true if the card has been returned, and false if not due to card not being in hand
 	 */
 
     public boolean returnCard(Card card, Deck deck) {
@@ -154,6 +142,11 @@ class Player {
         return isPresent;
     }
 
+    /**
+     * Takes the name and all cards in this discard pile and formats cards in the form of "<code>name</code> of <code>suit</code>" with commas <br>
+     * in between for example "Mr.&nbsp; Kalisz, 99, Ace of hearts, King of Hearts, Queen of Hearts, Jack of Hearts, 9 of Spades.
+     * @return All of the cards in the specified format as a single String
+	 */
     @Override
     public String toString() {
         String result = "";
