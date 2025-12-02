@@ -127,10 +127,14 @@ public class Player {
      * Returns a card from the hand to the deck.
      * @param card Card that is to be removed from this hand
 	 * @param deck Deck which the card is to be added to
-     * @return true if the card has been returned, and false if not due to card not being in hand
+     * @return true if the card has been returned, and false if card not in hand
+     * @throws IllegalArgumentException If deck is null
 	 */
 
     public boolean returnCard(Card card, Deck deck) {
+        if (deck == null) {
+            throw new IllegalArgumentException("Cannot return card to a null deck");
+        }
         boolean isPresent = this.hand.remove(card);
         if (isPresent) {
             deck.addCard(card);
