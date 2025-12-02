@@ -68,7 +68,7 @@ public class DiscardPile {
     }
 
     /**
-     * Method that removes a specified card from this discard pile.
+     * Removes a specified card from this discard pile.
      * @param card The Card to be removed from this discard pile
      * @return The Card that was removed, or null if card is not in discard pile
 	 */
@@ -82,7 +82,7 @@ public class DiscardPile {
     }
 
     /**
-     * Method that removes all the cards from this discard pile and returns them.
+     * Removes all the cards from this discard pile and returns them.
      * @return A Card array of all the cards in this discard pile, which can be empty if there are no cards
 	 */
 

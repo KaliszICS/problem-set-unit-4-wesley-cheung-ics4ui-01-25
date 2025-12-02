@@ -140,7 +140,7 @@ public class Player {
 
     /**
      * Takes the name and all cards in this discard pile and formats cards in the form of "<code>name</code> of <code>suit</code>" with commas <br>
-     * in between for example "Mr.&nbsp; Kalisz, 99, Ace of hearts, King of Hearts, Queen of Hearts, Jack of Hearts, 9 of Spades.
+     * in between for example "Mr.&nbsp; Kalisz, 99, Ace of hearts, King of Hearts, Queen of Hearts, Jack of Hearts, 9 of Spades.&nbsp;"
      * @return All of the cards in the specified format as a single String
 	 */
     @Override
